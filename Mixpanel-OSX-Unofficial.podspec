@@ -14,4 +14,5 @@ Pod::Spec.new do |s|
   s.source_files  = 'Mixpanel/**/*.{m,h}'
   s.frameworks = 'Cocoa', 'Foundation', 'SystemConfiguration'
   s.requires_arc = true
+  s.deprecated_in_favor_of = 'Mixpanel-OSX-Community'
 end
