@@ -1,4 +1,12 @@
-**Quick start**
+# Mixpanel Analytics on OS X 10.7+#
+
+This is an unofficial Mixpanel Analytics API client for OS X. Supports tracking events, people, and push notifications.
+
+This library supports ARC and OS X 10.7+. Has only been tested on 10.9.
+
+The API calls are exactly the same as the Mixpanel iOS Library 2.1.6. Notifications and surveys are not supported. See the [offical Mixpanel documentation »](https://mixpanel.com/help/reference/ios) for more info.
+
+**Quick start (Same as iOS)**
 
 1. Install [CocoaPods](http://cocoapods.org/) with `gem install cocoapods`.
 2. Create a file in your XCode project called `Podfile` and add the following line:
@@ -19,4 +27,4 @@ install the Mixpanel library, and create a new Xcode workspace. Open up this wor
 
         [[Mixpanel sharedInstance] track:@"Watched video" properties:@{@"duration": @53}];
 
-**Check out the [full documentation »](https://mixpanel.com/help/reference/ios)**
+**Check out the [full documentation »](https://mixpanel.com/help/reference/ios) from Mixpanel.**
