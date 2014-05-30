@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import <Cocoa/Cocoa.h>
 
 @class    MixpanelPeople;
 @protocol MixpanelDelegate;
@@ -115,60 +115,6 @@
  */
 @property (atomic) BOOL showNetworkActivityIndicator;
 
-/*!
- @property
-
- @abstract
- Controls whether to automatically check for surveys for the
- currently identified user when the application becomes active.
-
- @discussion
- Defaults to YES. Will fire a network request on
- <code>applicationDidBecomeActive</code> to retrieve a list of valid suerveys
- for the currently identified user.
- */
-@property (atomic) BOOL checkForSurveysOnActive;
-
-/*!
- @property
-
- @abstract
- Controls whether to automatically show a survey for the
- currently identified user when the application becomes active.
-
- @discussion
- Defaults to YES. This will only show a survey if
- <code>checkForSurveysOnActive</code> is also set to YES, and the
- survey check retrieves at least 1 valid survey for the currently
- identified user.
- */
-@property (atomic) BOOL showSurveyOnActive;
-
-/*!
- @property
-
- @abstract
- Controls whether to automatically check for notifications for the
- currently identified user when the application becomes active.
-
- @discussion
- Defaults to YES. Will fire a network request on
- <code>applicationDidBecomeActive</code> to retrieve a list of valid notifications
- for the currently identified user.
- */
-@property (atomic) BOOL checkForNotificationsOnActive;
-
-/*!
- @property
-
- @abstract
- Controls whether to automatically check for and show in-app notifications
- for the currently identified user when the application becomes active.
-
- @discussion
- Defaults to YES.
- */
-@property (atomic) BOOL showNotificationOnActive;
 
 /*!
  @property
@@ -434,68 +380,7 @@
  */
 - (void)archive;
 
-/*!
- @method
 
- @abstract
- Shows the survey with the given name.
-
- @discussion
- This method allows you to explicitly show a named survey at the time of your choosing.
-
- */
-- (void)showSurveyWithID:(NSUInteger)ID;
-
-/*!
- @method
-
- @abstract
- Show a survey if one is available.
-
- @discussion
- This method allows you to display the first available survey targeted to the currently
- identified user at the time of your choosing. You would typically pair this with
- setting <code>showSurveyOnActive = NO;</code> so that the survey won't show automatically.
-
- */
-- (void)showSurvey;
-
-
-/*!
- @method
-
- @abstract
- Shows the notification of the given id.
-
- @discussion
- You do not need to call this method on the main thread.
- */
-- (void)showNotificationWithID:(NSUInteger)ID;
-
-
-/*!
- @method
-
- @abstract
- Shows a notification with the given type if one is available.
-
- @discussion
- You do not need to call this method on the main thread.
-
- @param type The type of notification to show, either @"mini", or @"takeover"
- */
-- (void)showNotificationWithType:(NSString *)type;
-
-/*!
- @method
-
- @abstract
- Shows a notification if one is available.
-
- @discussion
- You do not need to call this method on the main thread.
- */
-- (void)showNotification;
 
 - (void)createAlias:(NSString *)alias forDistinctID:(NSString *)distinctID;
 
