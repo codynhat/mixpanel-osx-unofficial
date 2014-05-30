@@ -12,7 +12,6 @@ Pod::Spec.new do |s|
   s.platform     = :osx, "10.7"
   s.source       = { :git => "https://github.com/codynhat/mixpanel-osx-unofficial.git", :tag => "v1.0" }
   s.source_files  = 'Mixpanel/**/*.{m,h}'
-
+  s.frameworks = 'Cocoa', 'Foundation', 'SystemConfiguration'
   s.requires_arc = true
-
 end
